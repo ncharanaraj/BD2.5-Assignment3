@@ -265,8 +265,8 @@ function filterByAmenity(hotel, amenity) {
 
 app.get('/hotels/filter/amenity', (req, res) => {
   let amenity = req.query.amenity;
-  let result = hotels.filter((hotel) => filterByAmenity(hotel, amenity));
-  res.json({ hotels: result });
+  let filteredHotelsByAmenity = hotels.filter((hotel) => filterByAmenity(hotel, amenity));
+  res.json({ hotels: filteredHotelsByAmenity });
 });
 
 // Q5 Filter the hotels based on the selected Country
@@ -277,8 +277,8 @@ function filterByCountry(hotel, country) {
 
 app.get('/hotels/filter/country', (req, res) => {
   let country = req.query.country;
-  let result = hotels.filter((hotel) => filterByCountry(hotel, country));
-  res.json({ hotel: result });
+  let filteredHotelsByCountry = hotels.filter((hotel) => filterByCountry(hotel, country));
+  res.json({ hotels: filteredHotelsByCountry });
 });
 
 // Q6 Filter the hotels based on the selected Category
@@ -289,8 +289,8 @@ function filterByCategory(hotel, category) {
 
 app.get('/hotels/filter/category', (req, res) => {
   let category = req.query.category;
-  let result = hotels.filter((hotel) => filterByCategory(hotel, category));
-  res.json({ hotel: result });
+  let filteredHotelsByCategory = hotels.filter((hotel) => filterByCategory(hotel, category));
+  res.json({ hotels: filteredHotelsByCategory });
 });
 
 // Q7 Send all hotels
